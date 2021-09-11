@@ -26,19 +26,7 @@ After I was able to build the image and create a container from this image I inv
 6.  terraform validate
 7.  terraform apply
 
-### now of course there were many itterations through these commandto get everythibg working.
-
-### Q. What do I have to do?
-
-You may do all or some of the following tasks. Please read over the complete list before starting.
-
-1. If you know how to use git, start a git repository (local-only is acceptable) and commit all of your work to it.
-2. Deploy the app in AWS and navigate to the index page. Use Linux 64-bit as your OS (Amazon Linux preferred).
-3. Deploy the app in a Docker container. Use `node:10` as the base image.
-4. Inject an environment variable (`SECRET_WORD`) in the Docker container. The value of `SECRET_WORD` should be the secret word discovered on the index page of the application.
-5. Deploy a load balancer in front of the app.
-6. Use Infrastructure as Code (IaC) to "codify" your deployment. Terraform is ideal, but use whatever you know, e.g. CloudFormation, CDK, Deployment Manager, etc.
-7. Add TLS (https). You may use locally-generated certs.
+*** now of course there were many itterations through these command to get everythibg working.
 
 ### Q. How do I know I have solved these stages?
 
