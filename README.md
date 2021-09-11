@@ -14,9 +14,9 @@ Then I needed to install git, docker and terraform. Created my ssh private/publi
 
 I forked your "quest" repository into my GitHub account.
 
-Then I went about creating the Dockerfile and with the terraform.tf file (twelvefactor.tf). Now this took a little time as I needed to research terraform as I had never used the tool.
+Then I went about creating the Dockerfile and the terraform.tf file (twelvefactor.tf). Now this took a little time as I needed to research terraform as I had never used the tool.
 
-After I was able to build the image and create a container from this image I investigated creating a loadbalancer with self signed certificate. At which point I decide to stop. Did not want to incure the cost. Now I could have created a new AWS account using a new Gmail account which I would then be eligible for a free load balancer (750 hours). But I decide not to spend the time. 
+After I was able to build the image and create a container from this image I investigated creating a load balancer with self signed certificate. At which point I decide to stop. Did not want to incure the cost. Now I could have created a new AWS account using a new Gmail account which I would then be eligible for a free load balancer (750 hours). But I decide not to spend the time. 
 
 1.  git clone git@github.com:sreilly1956/quest.git
 2.  cd quest
