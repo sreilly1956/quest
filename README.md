@@ -1,16 +1,32 @@
-# A quest in the clouds
+# A quest in the clouds solution
 
-### Q. What is this quest?
+### Q. Application URL
 
-It is a fun way to assess your cloud skills. It is also a good representative sample of the work we do at Rearc. Quest is a webapp made with node.js and golang.
+Here is the URL: http://ec2-54-157-60-223.compute-1.amazonaws.com/
 
-### Q. Do I need to be an expert in node.js and golang?
+### Q. Setup EC2 instance
 
-No. The starting point of the quest app is `npm install && npm start`. That is all the node.js you need to know. And you wont even see golang.
+I created an t2.micro with Amazon Linux. I first did sudo yum update and to my suprise there were no updates. I assume my AMI was recent (nice suprise).
 
-### Q. So what skills should I have?
+Then I needed to install git, docker and terraform. Created my ssh private/publick key (ssh-keygen -t rsa") go I could upload to my GitHub account the public key.
 
-AWS. General cloud concepts, especially networking. Docker (containerization). IaC (Infrastructure as code). Linux/Unix. Git. TLS certs is a plus.
+### Q. Application solution sequence
+
+I forked your "quest" repository into my GitHub account.
+
+Then I went about creating the Dockerfile and with the terraform.tf file (twelvefactor.tf). Now this took a little time as I needed to research terraform as I had never used the tool.
+
+After I was able to build the image and create a container from this image I investigated creating a loadbalancer with self signed certificate. At which point I decide to stop. Did not want to incure the cost. Now I could have created a new AWS account using a new Gmail account which I would then be eligible for a free load balancer (750 hours). But I decide not to spend the time. 
+
+1.  git clone git@github.com:sreilly1956/quest.git
+2.  cd quest
+3.  vi Dockerfile
+4.  vi twelvefactor.tf
+5.  terraform init
+6.  terraform validate
+7.  terraform apply
+
+### now of course there were many itterations through these commandto get everythibg working.
 
 ### Q. What do I have to do?
 
@@ -26,51 +42,17 @@ You may do all or some of the following tasks. Please read over the complete lis
 
 ### Q. How do I know I have solved these stages?
 
-Each stage can be tested as follows (where `<ip_or_host>` is the location where the app is deployed):
+Each stage can be tested as follows:
 
-1. Index page (contains the secret word) - `http(s)://<ip_or_host>[:port]/`
-2. Docker check - `http(s)://<ip_or_host>[:port]/docker`
-3. Secret Word check - `http(s)://<ip_or_host>[:port]/secret_word`
-4. Load Balancer check  - `http(s)://<ip_or_host>[:port]/loadbalanced`
+1. Index page (contains the secret word) - `http://ec2-54-157-60-223.compute-1.amazonaws.com/`
+2. Docker check - `http://ec2-54-157-60-223.compute-1.amazonaws.com/docker`
+3. Secret Word check - `http://ec2-54-157-60-223.compute-1.amazonaws.com/secret_word`
+4. Load Balancer check  - `http://ec2-54-157-60-223.compute-1.amazonaws.com/loadbalanced`
 5. TLS check - `http(s)://<ip_or_host>[:port]/tls`
 
-### Q. Do I have to do all these?
-
-You may do whichever, and however many, of the tasks above as you'd like. We suspect that once you start, you won't be able to stop. It's addictive.
-
-### Q. What do I have to submit?
-
-1. Your work assets, as one or both of the following:
-  - A link to a hosted git repository.
-  - A ZIP file containing your project directory. Include the `.git` sub-directory if you used git.
-2. Proof of completion, as one or both of the following:
-  - A link to a hosted AWS deployment.
-  - One or more screenshots showing, at least, the index page of the final deployment.
-
-Your work assets should include:
-
-- IaC files, if you completed that task.
-- One or more Dockerfiles, if you completed that task.
-- A sensible README or other file(s) that contain instructions, notes, or other written documentation to help us review and assess your submission.
-
-### Q. How long do I need to host my submission on AWS?
-
-You don't have to at all if you don't want to. You can run it in AWS, grab a screenshot, then tear it all down to avoid costs.
-
-If you _want_ to host it longer for us to view it, we recommend taking a screenshot anyway and sending that along with the link. Then you can tear down the quest whenever you want and we'll still have the screenshot. We recommend waiting no longer than one week after sending us the link before tearing it down.
-
-### Q. What if I successfully complete all the challenges?
-
-We have many more for you to solve as a member of the Rearc team!
 
 ### Q. What if I find a bug?
 
-Awesome! Tell us you found a bug in your submission to us, ideally in an email, and we'll talk more!
+Not really a bug .. Apparently node version 10 is no longer maintained! I would suggest moving up to v16 so as not to get warnings.
 
-### Q. What if I fail?
 
-There is no fail. Complete whatever you can and then submit your work. Doing _everything_ in the quest is not a guarantee that you will "pass" the quest, just like not doing something is not a guarantee you will "fail" the quest.
-
-### Q. Can I share this quest with others?
-
-No.
