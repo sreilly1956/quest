@@ -36,7 +36,7 @@ Each stage can be tested as follows:
 2. Docker check - `http://ec2-54-157-60-223.compute-1.amazonaws.com/docker`
 3. Secret Word check - `http://ec2-54-157-60-223.compute-1.amazonaws.com/secret_word`
 4. Load Balancer check  - `http://ec2-54-157-60-223.compute-1.amazonaws.com/loadbalanced`
-5. TLS check - `http(s)://<ip_or_host>[:port]/tls`
+5. TLS check - `http://ec2-54-157-60-223.compute-1.amazonaws.com/tls`
 
 
 ### Q. What if I find a bug?
